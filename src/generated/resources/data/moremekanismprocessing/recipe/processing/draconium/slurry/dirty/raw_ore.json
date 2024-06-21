@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:raw_materials/draconium"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "draconium",
+      "requireLevel": 5
+    }
+  ],
+  "type": "mekanism:dissolution",
+  "gas_input": {
+    "amount": 1,
+    "gas": "mekanism:sulfuric_acid"
+  },
+  "item_input": {
+    "count": 3,
+    "tag": "c:raw_materials/draconium"
+  },
+  "output": {
+    "amount": 2000,
+    "chemical_type": "slurry",
+    "id": "moremekanismprocessing:dirty_draconium"
+  }
+}

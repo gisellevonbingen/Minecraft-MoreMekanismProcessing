@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:raw_materials/crimson_iron"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "crimson_iron",
+      "requireLevel": 4
+    }
+  ],
+  "type": "moremekanismprocessing:tag_injecting",
+  "chemical_input": {
+    "amount": 1,
+    "gas": "mekanism:hydrogen_chloride"
+  },
+  "item_input": {
+    "count": 3,
+    "tag": "c:raw_materials/crimson_iron"
+  },
+  "output": {
+    "count": 8,
+    "tag": "c:shards/crimson_iron"
+  }
+}

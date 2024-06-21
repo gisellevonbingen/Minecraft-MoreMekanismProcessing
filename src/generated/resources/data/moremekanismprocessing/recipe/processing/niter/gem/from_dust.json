@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "niter",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:dusts/niter"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:gems/niter"
+  }
+}

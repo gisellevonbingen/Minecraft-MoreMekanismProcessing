@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:raw_materials/azure_silver"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "azure_silver",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 3,
+    "tag": "c:raw_materials/azure_silver"
+  },
+  "output": {
+    "count": 4,
+    "tag": "c:dusts/azure_silver"
+  }
+}

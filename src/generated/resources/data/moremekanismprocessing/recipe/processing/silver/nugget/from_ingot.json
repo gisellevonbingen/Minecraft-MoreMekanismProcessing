@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:silver_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:silver_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:silver_nugget"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "emerald",
+      "requireLevel": 5
+    }
+  ],
+  "type": "mekanism:washing",
+  "fluid_input": {
+    "amount": 5,
+    "fluid": "minecraft:water"
+  },
+  "output": {
+    "amount": 1,
+    "id": "moremekanismprocessing:clean_emerald"
+  },
+  "slurry_input": {
+    "amount": 1,
+    "slurry": "moremekanismprocessing:dirty_emerald"
+  }
+}

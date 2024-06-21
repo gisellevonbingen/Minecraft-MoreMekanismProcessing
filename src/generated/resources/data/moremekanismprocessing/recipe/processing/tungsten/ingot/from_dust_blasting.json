@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "tungsten",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:tungsten_ingot",
+  "ingredient": {
+    "tag": "c:dusts/tungsten"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/tungsten"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/green_sapphire"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "green_sapphire",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:ores/green_sapphire"
+  },
+  "output": {
+    "count": 2,
+    "tag": "c:gems/green_sapphire"
+  }
+}

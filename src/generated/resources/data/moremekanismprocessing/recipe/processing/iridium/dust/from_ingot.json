@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "iridium",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_crushing",
+  "input": {
+    "count": 1,
+    "tag": "c:ingots/iridium"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:dusts/iridium"
+  }
+}

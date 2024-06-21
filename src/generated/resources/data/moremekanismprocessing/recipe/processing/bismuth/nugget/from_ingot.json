@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:bismuth_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:bismuth_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:bismuth_nugget"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "sapphire",
+      "requireLevel": 5
+    }
+  ],
+  "type": "moremekanismprocessing:tag_crystallizing",
+  "chemical_type": "slurry",
+  "input": {
+    "amount": 200,
+    "slurry": "moremekanismprocessing:clean_sapphire"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:crystals/sapphire"
+  }
+}

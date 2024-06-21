@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/amethyst"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "amethyst",
+      "requireLevel": 4
+    }
+  ],
+  "type": "moremekanismprocessing:tag_injecting",
+  "chemical_input": {
+    "amount": 1,
+    "gas": "mekanism:hydrogen_chloride"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:ores/amethyst"
+  },
+  "output": {
+    "count": 4,
+    "tag": "c:shards/amethyst"
+  }
+}

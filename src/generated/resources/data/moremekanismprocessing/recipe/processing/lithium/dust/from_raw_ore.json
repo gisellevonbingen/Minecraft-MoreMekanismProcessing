@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:raw_materials/lithium"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "lithium",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 3,
+    "tag": "c:raw_materials/lithium"
+  },
+  "output": {
+    "count": 4,
+    "tag": "c:dusts/lithium"
+  }
+}

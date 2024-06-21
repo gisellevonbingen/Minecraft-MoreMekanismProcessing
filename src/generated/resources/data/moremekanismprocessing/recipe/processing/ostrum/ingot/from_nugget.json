@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:ostrum_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/ostrum"
+    },
+    "*": {
+      "item": "moremekanismprocessing:ostrum_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:ostrum_ingot"
+  }
+}

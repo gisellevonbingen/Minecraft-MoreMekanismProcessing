@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "peridot",
+      "requireLevel": 3
+    }
+  ],
+  "type": "moremekanismprocessing:tag_crushing",
+  "input": {
+    "count": 1,
+    "tag": "c:clumps/peridot"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:dirty_dusts/peridot"
+  }
+}

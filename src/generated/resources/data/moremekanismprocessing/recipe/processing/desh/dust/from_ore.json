@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/desh"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "desh",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:ores/desh"
+  },
+  "output": {
+    "count": 2,
+    "tag": "c:dusts/desh"
+  }
+}

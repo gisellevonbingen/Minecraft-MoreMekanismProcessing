@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:lithium_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/lithium"
+    },
+    "*": {
+      "item": "moremekanismprocessing:lithium_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:lithium_ingot"
+  }
+}

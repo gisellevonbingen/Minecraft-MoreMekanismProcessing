@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "electrotine",
+      "requireLevel": 4
+    }
+  ],
+  "type": "moremekanismprocessing:tag_purifying",
+  "chemical_input": {
+    "amount": 1,
+    "gas": "mekanism:oxygen"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:shards/electrotine"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:clumps/electrotine"
+  }
+}

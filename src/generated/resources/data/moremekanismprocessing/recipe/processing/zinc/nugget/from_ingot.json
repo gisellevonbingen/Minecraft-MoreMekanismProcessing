@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:zinc_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:zinc_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:zinc_nugget"
+  }
+}

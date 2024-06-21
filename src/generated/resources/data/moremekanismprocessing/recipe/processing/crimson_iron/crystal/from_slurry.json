@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "crimson_iron",
+      "requireLevel": 5
+    }
+  ],
+  "type": "moremekanismprocessing:tag_crystallizing",
+  "chemical_type": "slurry",
+  "input": {
+    "amount": 200,
+    "slurry": "moremekanismprocessing:clean_crimson_iron"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:crystals/crimson_iron"
+  }
+}

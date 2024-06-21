@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:cobalt_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:cobalt_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:cobalt_nugget"
+  }
+}

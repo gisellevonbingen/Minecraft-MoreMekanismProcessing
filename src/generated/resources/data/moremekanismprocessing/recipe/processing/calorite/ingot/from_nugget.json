@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:calorite_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/calorite"
+    },
+    "*": {
+      "item": "moremekanismprocessing:calorite_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:calorite_ingot"
+  }
+}

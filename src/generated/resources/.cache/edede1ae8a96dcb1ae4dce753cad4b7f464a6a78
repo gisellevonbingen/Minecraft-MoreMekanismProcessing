@@ -1,10 +1,10 @@
-// 1.20.4	2024-02-26T11:10:08.1264404	Tags for minecraft:block mod id moremekanismprocessing
-6973f091cf9c1a2eccc543eaf5fb49e9dbafd769 data/forge/tags/blocks/ores.json
-76fb4d5c41e2ea389d2ba34c042bbb0463ec6f2e data/forge/tags/blocks/ores/aluminum.json
-ba8922c9b25ba08aa639088241ccb4cf7ce24279 data/forge/tags/blocks/ores/amethyst.json
-1d29e78fb56bd5dcd15a84d0f9ab65a5a3fbbe5a data/forge/tags/blocks/ores/sapphire.json
-557e1174d29fb79c1893177fff781c2ddd6fb56e data/forge/tags/blocks/ores/titanium.json
-881501073c99f7d36e5e3c456313782af2214a5e data/forge/tags/blocks/ores/uranium.json
-881501073c99f7d36e5e3c456313782af2214a5e data/forge/tags/blocks/ores/yellorite.json
-2b5576cd74984e390cf1ebd3bbb5abd8314434cf data/forge/tags/blocks/storage_blocks/raw_aluminum.json
-96974778c420f394348644c360feb2846f5a9aa5 data/forge/tags/blocks/storage_blocks/raw_titanium.json
+// 1.21	2024-06-21T16:55:33.4304588	Tags for minecraft:block mod id moremekanismprocessing
+6973f091cf9c1a2eccc543eaf5fb49e9dbafd769 data/c/tags/block/ores.json
+76fb4d5c41e2ea389d2ba34c042bbb0463ec6f2e data/c/tags/block/ores/aluminum.json
+ba8922c9b25ba08aa639088241ccb4cf7ce24279 data/c/tags/block/ores/amethyst.json
+1d29e78fb56bd5dcd15a84d0f9ab65a5a3fbbe5a data/c/tags/block/ores/sapphire.json
+557e1174d29fb79c1893177fff781c2ddd6fb56e data/c/tags/block/ores/titanium.json
+881501073c99f7d36e5e3c456313782af2214a5e data/c/tags/block/ores/uranium.json
+881501073c99f7d36e5e3c456313782af2214a5e data/c/tags/block/ores/yellorite.json
+2b5576cd74984e390cf1ebd3bbb5abd8314434cf data/c/tags/block/storage_blocks/raw_aluminum.json
+96974778c420f394348644c360feb2846f5a9aa5 data/c/tags/block/storage_blocks/raw_titanium.json

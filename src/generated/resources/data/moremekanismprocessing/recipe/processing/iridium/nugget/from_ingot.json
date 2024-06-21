@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:iridium_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:iridium_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:iridium_nugget"
+  }
+}

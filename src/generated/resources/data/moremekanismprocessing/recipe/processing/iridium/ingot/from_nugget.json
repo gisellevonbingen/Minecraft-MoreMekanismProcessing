@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:iridium_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/iridium"
+    },
+    "*": {
+      "item": "moremekanismprocessing:iridium_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:iridium_ingot"
+  }
+}

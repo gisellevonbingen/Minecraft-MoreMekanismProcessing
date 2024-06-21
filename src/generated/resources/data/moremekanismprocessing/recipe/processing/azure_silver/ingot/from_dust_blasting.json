@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "azure_silver",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:azure_silver_ingot",
+  "ingredient": {
+    "tag": "c:dusts/azure_silver"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/azure_silver"
+  }
+}

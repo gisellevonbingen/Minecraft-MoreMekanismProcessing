@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:calorite_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:calorite_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:calorite_nugget"
+  }
+}

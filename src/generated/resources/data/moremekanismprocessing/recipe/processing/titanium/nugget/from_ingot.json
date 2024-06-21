@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:titanium_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:titanium_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:titanium_nugget"
+  }
+}

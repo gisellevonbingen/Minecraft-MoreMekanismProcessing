@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/raw_titanium"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "titanium",
+      "requireLevel": 3
+    }
+  ],
+  "type": "moremekanismprocessing:tag_purifying",
+  "chemical_input": {
+    "amount": 2,
+    "gas": "mekanism:oxygen"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:storage_blocks/raw_titanium"
+  },
+  "output": {
+    "count": 18,
+    "tag": "c:clumps/titanium"
+  }
+}

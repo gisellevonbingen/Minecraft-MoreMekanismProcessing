@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:nickel_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/nickel"
+    },
+    "*": {
+      "item": "moremekanismprocessing:nickel_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:nickel_ingot"
+  }
+}

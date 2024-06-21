@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "draconium",
+      "requireLevel": 3
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:dirty_dusts/draconium"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:dusts/draconium"
+  }
+}

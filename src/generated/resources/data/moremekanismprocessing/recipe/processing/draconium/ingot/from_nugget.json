@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:draconium_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/draconium"
+    },
+    "*": {
+      "item": "moremekanismprocessing:draconium_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:draconium_ingot"
+  }
+}

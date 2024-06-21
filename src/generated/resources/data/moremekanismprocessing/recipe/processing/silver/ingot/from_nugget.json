@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:silver_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/silver"
+    },
+    "*": {
+      "item": "moremekanismprocessing:silver_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:silver_ingot"
+  }
+}

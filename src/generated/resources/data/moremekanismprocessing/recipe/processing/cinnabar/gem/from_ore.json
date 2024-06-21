@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/cinnabar"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "cinnabar",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:ores/cinnabar"
+  },
+  "output": {
+    "count": 2,
+    "tag": "c:gems/cinnabar"
+  }
+}

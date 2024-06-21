@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:cobalt_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/cobalt"
+    },
+    "*": {
+      "item": "moremekanismprocessing:cobalt_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:cobalt_ingot"
+  }
+}

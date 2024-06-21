@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/ruby"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "ruby",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:ores/ruby"
+  },
+  "output": {
+    "count": 2,
+    "tag": "c:gems/ruby"
+  }
+}

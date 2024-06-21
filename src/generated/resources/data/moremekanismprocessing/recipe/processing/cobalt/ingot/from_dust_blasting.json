@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "cobalt",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:cobalt_ingot",
+  "ingredient": {
+    "tag": "c:dusts/cobalt"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/cobalt"
+  }
+}

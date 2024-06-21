@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/raw_nickel"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "nickel",
+      "requireLevel": 5
+    }
+  ],
+  "type": "mekanism:dissolution",
+  "gas_input": {
+    "amount": 2,
+    "gas": "mekanism:sulfuric_acid"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:storage_blocks/raw_nickel"
+  },
+  "output": {
+    "amount": 6000,
+    "chemical_type": "slurry",
+    "id": "moremekanismprocessing:dirty_nickel"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "nickel",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:nickel_ingot",
+  "ingredient": {
+    "tag": "c:dusts/nickel"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/nickel"
+  }
+}

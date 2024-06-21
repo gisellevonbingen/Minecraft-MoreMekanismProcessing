@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "titanium",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:titanium_ingot",
+  "ingredient": {
+    "tag": "c:dusts/titanium"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/titanium"
+  }
+}

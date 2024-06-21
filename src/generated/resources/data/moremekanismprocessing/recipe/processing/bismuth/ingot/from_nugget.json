@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:bismuth_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/bismuth"
+    },
+    "*": {
+      "item": "moremekanismprocessing:bismuth_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:bismuth_ingot"
+  }
+}

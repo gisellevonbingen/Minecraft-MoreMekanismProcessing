@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:zinc_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/zinc"
+    },
+    "*": {
+      "item": "moremekanismprocessing:zinc_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:zinc_ingot"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:raw_materials/nickel"
+      }
+    },
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "nickel",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_enriching",
+  "input": {
+    "count": 3,
+    "tag": "c:raw_materials/nickel"
+  },
+  "output": {
+    "count": 4,
+    "tag": "c:dusts/nickel"
+  }
+}

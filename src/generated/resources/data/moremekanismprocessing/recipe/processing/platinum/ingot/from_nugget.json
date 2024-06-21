@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:platinum_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/platinum"
+    },
+    "*": {
+      "item": "moremekanismprocessing:platinum_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:platinum_ingot"
+  }
+}

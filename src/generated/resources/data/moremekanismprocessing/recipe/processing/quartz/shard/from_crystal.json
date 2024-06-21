@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "quartz",
+      "requireLevel": 5
+    }
+  ],
+  "type": "moremekanismprocessing:tag_injecting",
+  "chemical_input": {
+    "amount": 1,
+    "gas": "mekanism:hydrogen_chloride"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:crystals/quartz"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:shards/quartz"
+  }
+}

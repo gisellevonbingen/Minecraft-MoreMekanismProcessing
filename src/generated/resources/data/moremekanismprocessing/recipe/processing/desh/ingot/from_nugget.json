@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "moremekanismprocessing:desh_ingot",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/desh"
+    },
+    "*": {
+      "item": "moremekanismprocessing:desh_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremekanismprocessing:desh_ingot"
+  }
+}

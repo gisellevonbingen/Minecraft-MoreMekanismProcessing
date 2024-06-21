@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "ostrum",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:ostrum_ingot",
+  "ingredient": {
+    "tag": "c:dusts/ostrum"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/ostrum"
+  }
+}

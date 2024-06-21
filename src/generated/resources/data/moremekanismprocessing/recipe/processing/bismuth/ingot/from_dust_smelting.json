@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "bismuth",
+      "requireLevel": 2
+    }
+  ],
+  "type": "moremekanismprocessing:tag_smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "group": "moremekanismprocessing:bismuth_ingot",
+  "ingredient": {
+    "tag": "c:dusts/bismuth"
+  },
+  "result": {
+    "count": 1,
+    "tag": "c:ingots/bismuth"
+  }
+}

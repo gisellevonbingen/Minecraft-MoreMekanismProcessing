@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "moremekanismprocessing:platinum_nugget",
+  "ingredients": [
+    {
+      "item": "moremekanismprocessing:platinum_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "moremekanismprocessing:platinum_nugget"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "moremekanismprocessing:processing_level",
+      "materialType": "ruby",
+      "requireLevel": 5
+    }
+  ],
+  "type": "mekanism:washing",
+  "fluid_input": {
+    "amount": 5,
+    "fluid": "minecraft:water"
+  },
+  "output": {
+    "amount": 1,
+    "id": "moremekanismprocessing:clean_ruby"
+  },
+  "slurry_input": {
+    "amount": 1,
+    "slurry": "moremekanismprocessing:dirty_ruby"
+  }
+}
