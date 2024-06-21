@@ -24,26 +24,38 @@ public enum MaterialState
 	RAW_STORAGE_BLOCKS(new MaterialStateBuilder("raw_storage_blocks", Tags.Items.STORAGE_BLOCKS).tagPrefix("raw_").hasOwnItem(false)),
 	RAW_ITEM(new MaterialStateBuilder("raw_ore", Tags.Items.RAW_MATERIALS).hasOwnItem(false)),
 	DUST(new MaterialStateBuilder("dust", Tags.Items.DUSTS)),
-	DIRTY_DUST(new MaterialStateBuilder("dirty_dust", MekanismTags.Items.DIRTY_DUSTS)),
-	CLUMP(new MaterialStateBuilder("clump", MekanismTags.Items.CLUMPS)),
-	SHARD(new MaterialStateBuilder("shard", MekanismTags.Items.SHARDS)),
-	CRYSTAL(new MaterialStateBuilder("crystal", MekanismTags.Items.CRYSTALS)),
+	DIRTY_DUST(new MaterialStateBuilder("dirty_dust", MekanismTags.Items.DIRTY_DUSTS, commonTag("dirty_dusts"))),
+	CLUMP(new MaterialStateBuilder("clump", MekanismTags.Items.CLUMPS, commonTag("clumps"))),
+	SHARD(new MaterialStateBuilder("shard", MekanismTags.Items.SHARDS, commonTag("shards"))),
+	CRYSTAL(new MaterialStateBuilder("crystal", MekanismTags.Items.CRYSTALS, commonTag("crystals"))),
 	INGOT(new MaterialStateBuilder("ingot", Tags.Items.INGOTS)),
 	GEM(new MaterialStateBuilder("gem", Tags.Items.GEMS)),
 	NUGGET(new MaterialStateBuilder("nugget", Tags.Items.NUGGETS)),;
+
+	private static TagKey<Item> commonTag(String name)
+	{
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
+	}
 
 	public static class MaterialStateBuilder
 	{
 		private final String baseName;
 		private final TagKey<Item> categoryTag;
+		private final TagKey<Item> stateTag;
 
 		private boolean hasOwnItem;
 		private String tagPrefix;
 
 		public MaterialStateBuilder(String baseName, TagKey<Item> categoryTag)
 		{
+			this(baseName, categoryTag, categoryTag);
+		}
+
+		public MaterialStateBuilder(String baseName, TagKey<Item> categoryTag, TagKey<Item> stateTag)
+		{
 			this.baseName = baseName;
 			this.categoryTag = categoryTag;
+			this.stateTag = stateTag;
 
 			this.hasOwnItem = true;
 			this.tagPrefix = "";
@@ -65,6 +77,7 @@ public enum MaterialState
 
 	private String baseName;
 	private TagKey<Item> categoryTag;
+	private TagKey<Item> stateTag;
 
 	private boolean hasOwnItem;
 	private String tagPrefix;
@@ -73,6 +86,7 @@ public enum MaterialState
 	{
 		this.baseName = builder.baseName;
 		this.categoryTag = builder.categoryTag;
+		this.stateTag = builder.stateTag;
 
 		this.hasOwnItem = builder.hasOwnItem;
 		this.tagPrefix = builder.tagPrefix;
@@ -80,18 +94,18 @@ public enum MaterialState
 
 	public ResourceLocation getStateTagName(MaterialType materialType)
 	{
-		ResourceLocation categoryTagName = this.getCategoryTag().location();
+		ResourceLocation stateTagName = this.stateTag.location();
 		String tagPrefix = this.getTagPrefix();
 
 		StringBuilder pathBuilder = new StringBuilder();
-		pathBuilder.append(categoryTagName.getPath());
+		pathBuilder.append(stateTagName.getPath());
 		pathBuilder.append("/");
 		pathBuilder.append(tagPrefix);
 		pathBuilder.append(materialType.getBaseName());
-		return new ResourceLocation(categoryTagName.getNamespace(), pathBuilder.toString());
+		return ResourceLocation.fromNamespaceAndPath(stateTagName.getNamespace(), pathBuilder.toString());
 	}
 
-	public TagKey<Item> getStateItemTag(MaterialType materialType)
+	public TagKey<Item> getStateTag(MaterialType materialType)
 	{
 		if (this.hasOwnItem() == true)
 		{

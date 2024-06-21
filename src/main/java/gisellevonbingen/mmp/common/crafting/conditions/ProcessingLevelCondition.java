@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.apache.commons.lang3.StringUtils;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import gisellevonbingen.mmp.common.config.MMPConfigs;
@@ -14,7 +15,7 @@ import net.neoforged.neoforge.common.conditions.ICondition;
 
 public record ProcessingLevelCondition(String materialType, int requireLevel) implements ICondition
 {
-	public static Codec<ProcessingLevelCondition> CODEC = RecordCodecBuilder.create(builder -> builder.group(//
+	public static MapCodec<ProcessingLevelCondition> CODEC = RecordCodecBuilder.mapCodec(builder -> builder.group(//
 			Codec.STRING.fieldOf("materialType").forGetter(ProcessingLevelCondition::materialType), //
 			Codec.INT.fieldOf("requireLevel").forGetter(ProcessingLevelCondition::requireLevel))//
 			.apply(builder, ProcessingLevelCondition::new));
@@ -40,7 +41,7 @@ public record ProcessingLevelCondition(String materialType, int requireLevel) im
 	}
 
 	@Override
-	public Codec<? extends ICondition> codec()
+	public MapCodec<? extends ICondition> codec()
 	{
 		return CODEC;
 	}

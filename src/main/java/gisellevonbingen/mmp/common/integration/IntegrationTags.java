@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.Block;
 
 public class IntegrationTags
 {
-	public static final ResourceLocation NAME_ORES_YELLORITE = new ResourceLocation("forge", "ores/yellorite");
-	public static final ResourceLocation NAME_ORES_URANIUM = new ResourceLocation("forge", "ores/uranium");
-	public static final ResourceLocation NAME_ORES_ALUMINUM = new ResourceLocation("forge", "ores/aluminum");
-	public static final ResourceLocation NAME_ORES_TITANIUM = new ResourceLocation("forge", "ores/titanium");
+	public static final ResourceLocation NAME_ORES_YELLORITE = ResourceLocation.fromNamespaceAndPath("c", "ores/yellorite");
+	public static final ResourceLocation NAME_ORES_URANIUM = ResourceLocation.fromNamespaceAndPath("c", "ores/uranium");
+	public static final ResourceLocation NAME_ORES_ALUMINUM = ResourceLocation.fromNamespaceAndPath("c", "ores/aluminum");
+	public static final ResourceLocation NAME_ORES_TITANIUM = ResourceLocation.fromNamespaceAndPath("c", "ores/titanium");
 
 	public static void initialize()
 	{

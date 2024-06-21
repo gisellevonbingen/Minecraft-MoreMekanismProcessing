@@ -27,7 +27,7 @@ public class SlurryDeferredRegister2 extends SlurryDeferredRegister
 	public DeferredSlurry<Slurry> register(MMPSlurryBuilder builder, MaterialType materialType, UnaryOperator<SlurryBuilder> builderModifier)
 	{
 		builder.materialType(materialType);
-		builder.ore(MaterialState.ORE.getStateItemTag(materialType));
+		builder.ore(MaterialState.ORE.getStateTag(materialType));
 		return this.register(builder, builderModifier);
 	}
 

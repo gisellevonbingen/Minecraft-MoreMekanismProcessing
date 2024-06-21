@@ -18,7 +18,7 @@ public abstract class IntegrationMod
 
 	public ResourceLocation getResourceLocation(String path)
 	{
-		return new ResourceLocation(this.getModId(), path);
+		return ResourceLocation.fromNamespaceAndPath(this.getModId(), path);
 	}
 
 	public void addDataGenerator(GatherDataEvent event)

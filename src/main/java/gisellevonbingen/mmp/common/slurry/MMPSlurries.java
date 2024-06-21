@@ -51,7 +51,7 @@ public class MMPSlurries
 		@Override
 		public SlurryBuilder apply(SlurryBuilder builder)
 		{
-			TagKey<Item> tag = MaterialState.ORE.getStateItemTag(this.materialType);
+			TagKey<Item> tag = MaterialState.ORE.getStateTag(this.materialType);
 			return builder.ore(tag);
 		}
 

@@ -26,7 +26,7 @@ public class MMPCreativeModeTab extends CreativeModeTab
 		{
 			this.items = MMPItems.ITEMS.getEntries().stream().map(i -> i.get()).toList();
 		}
-		
+
 		int size = this.items.size();
 
 		if (size > 0)

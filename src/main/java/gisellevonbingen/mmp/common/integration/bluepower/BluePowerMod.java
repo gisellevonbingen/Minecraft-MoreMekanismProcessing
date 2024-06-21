@@ -30,9 +30,9 @@ public class BluePowerMod extends IntegrationMod
 	{
 		super.addItemTags(generator);
 
-		generator.tagOptional(MaterialState.RAW_ITEM.getStateItemTag(MaterialType.SILVER), SILVER_RAW_ITEM);
-		generator.tagOptional(MaterialState.RAW_ITEM.getStateItemTag(MaterialType.ZINC), ZINC_RAW_ITEM);
-		generator.tagOptional(MaterialState.RAW_ITEM.getStateItemTag(MaterialType.TUNGSTEN), TUNGSTEN_RAW_ITEM);
+		generator.tagOptional(MaterialState.RAW_ITEM.getStateTag(MaterialType.SILVER), SILVER_RAW_ITEM);
+		generator.tagOptional(MaterialState.RAW_ITEM.getStateTag(MaterialType.ZINC), ZINC_RAW_ITEM);
+		generator.tagOptional(MaterialState.RAW_ITEM.getStateTag(MaterialType.TUNGSTEN), TUNGSTEN_RAW_ITEM);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class BluePowerMod extends IntegrationMod
 
 	public static ResourceLocation rl(String path)
 	{
-		return new ResourceLocation(MODID, path);
+		return ResourceLocation.fromNamespaceAndPath(MODID, path);
 	}
 
 }

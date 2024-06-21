@@ -1,13 +1,13 @@
 plugins {
-    id "net.neoforged.gradle.userdev" version "7.0.80"
+    id "net.neoforged.gradle.userdev" version "7.0.145"
 }
 
 apply plugin: "java-library"
 apply plugin: "maven-publish"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 
 archivesBaseName = rootProject.archives_base_name
 version = "${rootProject.mc_version}-${rootProject.mod_version}"
@@ -25,10 +25,6 @@ repositories {
     maven {
         name "CurseForge"
         url "https://www.cursemaven.com"
-    }
-    maven {
-        name "Local"
-        url uri("${projectDir}/libs")
     }
 }
 
@@ -61,21 +57,21 @@ runs {
 sourceSets.main.resources { srcDir "src/generated/resources" }
 
 dependencies {
-    // Mod
     implementation "net.neoforged:neoforge:${neoforge_api_version}"
 
-    // Required
+    // Implementation
     implementation "mekanism:Mekanism:${mc_version}-${mekanism_version}"
+    implementation "mekanism:Mekanism:${mc_version}-${mekanism_version}:generators"
     runtimeOnly "mekanism:Mekanism:${mc_version}-${mekanism_version}:additions"
-    runtimeOnly "mekanism:Mekanism:${mc_version}-${mekanism_version}:generators"
     runtimeOnly "mekanism:Mekanism:${mc_version}-${mekanism_version}:tools"
 
     // Runtiem Only
     implementation "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    runtimeOnly "curse.maven:ato-405593:5466566"
 }
 
 tasks.withType(ProcessResources).configureEach {
-    var resourceTargets = ["META-INF/mods.toml", "*.json"]
+    var resourceTargets = ["META-INF/neoforge.mods.toml", "*.json"]
     var intoTargets = ["$rootDir/out/production/resources/", "$rootDir/out/production/${project.name}.main/", "$rootDir/bin/main/"]
     var replaceProperties = [mc_version: mc_version,
         mod_id: mod_id, mod_version: mod_version, mod_name: mod_name, mod_description: mod_description, mod_license: mod_license, mod_homepage: mod_homepage, mod_source: mod_source, mod_issues: mod_issues,

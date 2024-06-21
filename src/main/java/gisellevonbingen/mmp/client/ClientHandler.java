@@ -12,11 +12,11 @@ import mekanism.common.registration.impl.ItemRegistryObject;
 import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.common.Mod.EventBusSubscriber.Bus;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.EventBusSubscriber.Bus;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
-@Mod.EventBusSubscriber(modid = MoreMekanismProcessing.MODID, value = Dist.CLIENT, bus = Bus.MOD)
+@EventBusSubscriber(modid = MoreMekanismProcessing.MODID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ClientHandler
 {
 	@SubscribeEvent

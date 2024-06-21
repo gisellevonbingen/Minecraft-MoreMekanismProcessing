@@ -52,9 +52,9 @@ public class VoluminousEnergyMod extends IntegrationMod
 	{
 		super.addItemTags(generator);
 
-		generator.tagOptional(MaterialState.RAW_ITEM.getStateItemTag(MaterialType.ALUMINUM), BAUXITE_RAW_ITEM);
+		generator.tagOptional(MaterialState.RAW_ITEM.getStateTag(MaterialType.ALUMINUM), BAUXITE_RAW_ITEM);
 
-		generator.tagOptional(MaterialState.RAW_ITEM.getStateItemTag(MaterialType.TITANIUM), RUTILE_RAW_ITEM);
+		generator.tagOptional(MaterialState.RAW_ITEM.getStateTag(MaterialType.TITANIUM), RUTILE_RAW_ITEM);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class VoluminousEnergyMod extends IntegrationMod
 
 	public static ResourceLocation rl(String path)
 	{
-		return new ResourceLocation(MODID, path);
+		return ResourceLocation.fromNamespaceAndPath(MODID, path);
 	}
 
 }

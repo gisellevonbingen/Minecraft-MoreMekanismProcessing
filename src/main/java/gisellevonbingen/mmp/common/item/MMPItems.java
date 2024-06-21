@@ -10,7 +10,6 @@ import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.config.MMPConfigs;
 import gisellevonbingen.mmp.common.material.MaterialState;
 import gisellevonbingen.mmp.common.material.MaterialType;
-import gisellevonbingen.mmp.common.util.LauncherUtil;
 import mekanism.common.registration.impl.ItemDeferredRegister;
 import mekanism.common.registration.impl.ItemRegistryObject;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -117,7 +116,7 @@ public class MMPItems
 
 	public static boolean testProcessingLevel(MaterialType materialType, MaterialState materialState)
 	{
-		if (LauncherUtil.isRunDevData() == true)
+		if (MoreMekanismProcessing.IS_DATA_GEN == true)
 		{
 			return true;
 		}

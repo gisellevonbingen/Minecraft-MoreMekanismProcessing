@@ -8,13 +8,13 @@ import org.apache.commons.lang3.tuple.Pair;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModLoadingContext;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class MMPConfigs
 {
 	public static final Map<ModConfig.Type, ModConfigSpec> SPECS;
@@ -64,7 +64,7 @@ public class MMPConfigs
 
 		if (spec != null)
 		{
-			modLoadingContext.registerConfig(type, spec);
+			modLoadingContext.getActiveContainer().registerConfig(type, spec);
 		}
 
 	}

@@ -39,7 +39,7 @@ public class ExtremeReactors2Mod extends IntegrationMod
 
 	public static ResourceLocation rl(String path)
 	{
-		return new ResourceLocation(MODID, path);
+		return ResourceLocation.fromNamespaceAndPath(MODID, path);
 	}
 
 }

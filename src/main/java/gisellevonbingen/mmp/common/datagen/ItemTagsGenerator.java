@@ -41,7 +41,7 @@ public class ItemTagsGenerator extends ItemTagsProvider
 			for (MaterialState materialState : materialType.getResultShape().getProcessableStates())
 			{
 				TagAppender<Item> builderCategory = this.tag(materialState.getCategoryTag());
-				TagAppender<Item> builderState = this.tag(materialState.getStateItemTag(materialType));
+				TagAppender<Item> builderState = this.tag(materialState.getStateTag(materialType));
 
 				if (materialState.hasOwnItem() == true)
 				{
