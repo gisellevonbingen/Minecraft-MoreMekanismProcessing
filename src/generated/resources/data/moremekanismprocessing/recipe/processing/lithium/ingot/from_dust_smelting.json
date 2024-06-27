@@ -4,6 +4,10 @@
       "type": "moremekanismprocessing:processing_level",
       "materialType": "lithium",
       "requireLevel": 2
+    },
+    {
+      "type": "moremekanismprocessing:cooking_dust_into_ingot",
+      "materialType": "lithium"
     }
   ],
   "type": "moremekanismprocessing:tag_smelting",

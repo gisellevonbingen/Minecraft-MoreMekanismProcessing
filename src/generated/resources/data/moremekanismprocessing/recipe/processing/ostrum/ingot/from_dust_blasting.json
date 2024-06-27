@@ -4,6 +4,10 @@
       "type": "moremekanismprocessing:processing_level",
       "materialType": "ostrum",
       "requireLevel": 2
+    },
+    {
+      "type": "moremekanismprocessing:cooking_dust_into_ingot",
+      "materialType": "ostrum"
     }
   ],
   "type": "moremekanismprocessing:tag_blasting",

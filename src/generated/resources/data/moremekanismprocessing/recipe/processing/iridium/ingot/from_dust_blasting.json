@@ -4,6 +4,10 @@
       "type": "moremekanismprocessing:processing_level",
       "materialType": "iridium",
       "requireLevel": 2
+    },
+    {
+      "type": "moremekanismprocessing:cooking_dust_into_ingot",
+      "materialType": "iridium"
     }
   ],
   "type": "moremekanismprocessing:tag_blasting",

@@ -4,6 +4,10 @@
       "type": "moremekanismprocessing:processing_level",
       "materialType": "crimson_iron",
       "requireLevel": 2
+    },
+    {
+      "type": "moremekanismprocessing:cooking_dust_into_ingot",
+      "materialType": "crimson_iron"
     }
   ],
   "type": "moremekanismprocessing:tag_blasting",
