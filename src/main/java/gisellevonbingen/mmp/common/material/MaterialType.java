@@ -1,7 +1,11 @@
 package gisellevonbingen.mmp.common.material;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+
+import org.apache.commons.lang3.StringUtils;
 
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.config.MMPConfigs;
@@ -67,6 +71,11 @@ public enum MaterialType
 		this.displayName = builder.displayName();
 		this.defaultColor = builder.color();
 		this.respectMekanism = builder.respect();
+	}
+
+	public static Optional<MaterialType> find(String name)
+	{
+		return Arrays.stream(MaterialType.values()).filter(t -> StringUtils.equals(t.getBaseName(), name)).findAny();
 	}
 
 	public String getDescriptionId()

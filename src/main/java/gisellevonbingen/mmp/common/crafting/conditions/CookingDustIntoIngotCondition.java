@@ -10,12 +10,11 @@ import gisellevonbingen.mmp.common.config.MMPConfigs;
 import gisellevonbingen.mmp.common.material.MaterialType;
 import net.neoforged.neoforge.common.conditions.ICondition;
 
-public record ProcessingLevelCondition(String materialType, int requireLevel) implements ICondition
+public record CookingDustIntoIngotCondition(String materialType) implements ICondition
 {
-	public static MapCodec<ProcessingLevelCondition> CODEC = RecordCodecBuilder.mapCodec(builder -> builder.group(//
-			Codec.STRING.fieldOf("materialType").forGetter(ProcessingLevelCondition::materialType), //
-			Codec.INT.fieldOf("requireLevel").forGetter(ProcessingLevelCondition::requireLevel))//
-			.apply(builder, ProcessingLevelCondition::new));
+	public static MapCodec<CookingDustIntoIngotCondition> CODEC = RecordCodecBuilder.mapCodec(builder -> builder.group(//
+			Codec.STRING.fieldOf("materialType").forGetter(CookingDustIntoIngotCondition::materialType)) //
+			.apply(builder, CookingDustIntoIngotCondition::new));
 
 	@Override
 	public boolean test(IContext context)
@@ -27,14 +26,21 @@ public record ProcessingLevelCondition(String materialType, int requireLevel) im
 			return true;
 		}
 
-		int level = MMPConfigs.COMMON.processingLevels.get(materialType.get()).get();
-		return level >= this.requireLevel;
+		var config = MMPConfigs.COMMON.disableDustCookings.get(materialType.get());
+
+		if (config == null)
+		{
+			return true;
+		}
+
+		var disabled = config.get();
+		return disabled == false;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "processing_level(\"" + this.materialType + "\" require " + this.requireLevel + ")";
+		return "cooking_dust_into_ingot(\"" + this.materialType + ")";
 	}
 
 	@Override

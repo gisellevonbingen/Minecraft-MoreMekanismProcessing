@@ -12,5 +12,6 @@ public class MMPCraftingConditions
 {
 	public static final DeferredRegister<MapCodec<? extends ICondition>> CONDITIONS = DeferredRegister.create(NeoForgeRegistries.CONDITION_SERIALIZERS, MoreMekanismProcessing.MODID);
 	public static final DeferredHolder<MapCodec<? extends ICondition>, MapCodec<ProcessingLevelCondition>> PROCESSING_LEVEL = CONDITIONS.register("processing_level", () -> ProcessingLevelCondition.CODEC);
+	public static final DeferredHolder<MapCodec<? extends ICondition>, MapCodec<CookingDustIntoIngotCondition>> COOKING_DUST_INTO_INGOT = CONDITIONS.register("cooking_dust_into_ingot", () -> CookingDustIntoIngotCondition.CODEC);
 
 }

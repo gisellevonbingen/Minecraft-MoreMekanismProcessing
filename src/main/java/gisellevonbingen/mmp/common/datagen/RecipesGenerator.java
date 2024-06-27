@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.crafting.BlastingTaggedOutputRecipe;
 import gisellevonbingen.mmp.common.crafting.SmeltingTaggedOutputRecipe;
+import gisellevonbingen.mmp.common.crafting.conditions.CookingDustIntoIngotCondition;
 import gisellevonbingen.mmp.common.crafting.conditions.ProcessingLevelCondition;
 import gisellevonbingen.mmp.common.datagen.recipe.builder.CrystallizerTaggedOutputRecipeBuilder;
 import gisellevonbingen.mmp.common.datagen.recipe.builder.ItemStackChemicalToTaggedOutputRecipeBuilder;
@@ -125,11 +126,11 @@ public class RecipesGenerator extends RecipeProvider
 			return list.toArray(ICondition[]::new);
 		}
 
-		public void applyConditionWithState(Consumer<ICondition> consumer, MaterialState state)
+		public void applyConditionWithState(Consumer<ICondition> consumer, MaterialState stateInput)
 		{
-			if (state.hasOwnItem() == false)
+			if (stateInput.hasOwnItem() == false)
 			{
-				consumer.accept(this.createConditionHasState(state));
+				consumer.accept(this.createConditionHasState(stateInput));
 			}
 
 			this.applyCondition(consumer);
@@ -413,7 +414,16 @@ public class RecipesGenerator extends RecipeProvider
 			for (Tuple<String, AbstractCookingRecipe> tuple : list)
 			{
 				ResourceLocation recipeName = this.getRecipeName(stateOutput, this.from(stateInput, tuple.getA()));
-				this.output.accept(recipeName, tuple.getB(), null, this.collect(t -> this.applyConditionWithState(t, stateInput)));
+				this.output.accept(recipeName, tuple.getB(), null, this.collect(t ->
+				{
+					this.applyConditionWithState(t, stateInput);
+
+					if (stateInput == MaterialState.DUST && stateOutput == MaterialState.INGOT)
+					{
+						t.accept(new CookingDustIntoIngotCondition(this.materialType.getBaseName()));
+					}
+
+				}));
 			}
 
 		}

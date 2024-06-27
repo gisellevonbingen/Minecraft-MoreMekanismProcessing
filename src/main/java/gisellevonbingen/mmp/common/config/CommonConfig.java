@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import gisellevonbingen.mmp.common.material.MaterialResultShape;
 import gisellevonbingen.mmp.common.material.MaterialState;
 import gisellevonbingen.mmp.common.material.MaterialType;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +16,7 @@ public class CommonConfig
 	public final ModConfigSpec.BooleanValue showOreNotExistRecipes;
 	public final ModConfigSpec.ConfigValue<List<? extends String>> recipeOutputPriority;
 	public final Map<MaterialType, ModConfigSpec.ConfigValue<Integer>> processingLevels;
+	public final Map<MaterialType, ModConfigSpec.ConfigValue<Boolean>> disableDustCookings;
 
 	public CommonConfig(ModConfigSpec.Builder builder)
 	{
@@ -28,11 +30,12 @@ public class CommonConfig
 
 		builder.pop();
 
-		builder.comment("processingLevel : set ores processing max level", "    5 : can into up x5 (able all procssing)", "    4 : can into up x4 (disable ore dissolution, slurry crystalizing)", "    3 : can into up x3 (disable injecting)", "    2 : can into up x2 (disable purifying and clumps crushing)", "    1 : reserved (currently same with 0)", "    0 : disable all processing in this mod",
+		builder.comment("processingLevel: Set ores processing max level", "    5 : can into up x5 (able all procssing)", "    4 : can into up x4 (disable ore dissolution, slurry crystalizing)", "    3 : can into up x3 (disable injecting)", "    2 : can into up x2 (disable purifying and clumps crushing)", "    1 : reserved (currently same with 0)", "    0 : disable all processing in this mod",
 				"disabled processing items are hided your world");
 		builder.push("ores");
 
 		this.processingLevels = new HashMap<>();
+		this.disableDustCookings = new HashMap<>();
 
 		for (MaterialType materialType : MaterialType.values())
 		{
@@ -42,12 +45,18 @@ public class CommonConfig
 			if (materialType.isRespectMekanism() == true)
 			{
 				ResourceLocation dustTag = MaterialState.DUST.getStateTagName(materialType);
-				builder.comment("exist for modpacks, set greater than 2 to enable this material recipes", "less than or equals 2 is use Mekanism Default Recipes", "    warning : when enabled, ore block can infinitely regenerate using Mekanism Combiner Default Recipe", "    propose remove/override Mekanism Combiner Default Recipe",
+				builder.comment("Exist for modpacks, set greater than 2 to enable this material recipes", "less than or equals 2 is use Mekanism Default Recipes", "    warning : when enabled, ore block can infinitely regenerate using Mekanism Combiner Default Recipe", "    propose remove/override Mekanism Combiner Default Recipe",
 						"    e.g.) \"ingredient\":{\"tag\":\"" + dustTag + "\"}},\"amount\":8");
 				processingLevel = 0;
 			}
 
 			this.processingLevels.put(materialType, builder.defineInRange("processingLevel", processingLevel, 0, 5));
+			
+			if (materialType.getResultShape() == MaterialResultShape.INGOT)
+			{
+				builder.comment("Disable recipe what smelting/blasting dust into ingot.");
+				this.disableDustCookings.put(materialType, builder.define("disableDustCooking", false));
+			}
 
 			builder.pop();
 		}
