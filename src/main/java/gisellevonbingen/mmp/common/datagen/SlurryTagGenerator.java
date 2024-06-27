@@ -7,10 +7,10 @@ import org.jetbrains.annotations.Nullable;
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.material.MaterialType;
 import gisellevonbingen.mmp.common.slurry.MMPSlurries;
+import mekanism.api.MekanismAPITags;
 import mekanism.api.chemical.slurry.Slurry;
 import mekanism.api.datagen.tag.ChemicalTagsProvider.SlurryTagsProvider;
 import mekanism.common.registration.impl.SlurryRegistryObject;
-import mekanism.common.tags.MekanismTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -25,8 +25,8 @@ public class SlurryTagGenerator extends SlurryTagsProvider
 	@Override
 	protected void addTags(HolderLookup.Provider lookupProvider)
 	{
-		TagAppender<Slurry> dirty = this.tag(MekanismTags.Slurries.DIRTY);
-		TagAppender<Slurry> clean = this.tag(MekanismTags.Slurries.CLEAN);
+		TagAppender<Slurry> dirty = this.tag(MekanismAPITags.Slurries.DIRTY);
+		TagAppender<Slurry> clean = this.tag(MekanismAPITags.Slurries.CLEAN);
 
 		for (MaterialType materialType : MaterialType.values())
 		{
