@@ -29,7 +29,7 @@ public class DataGenerators
 		BlockTagsGenerator blockTagsGenerator = new BlockTagsGenerator(output, lookupProvider, existingFileHelper);
 		generator.addProvider(event.includeServer(), blockTagsGenerator);
 		generator.addProvider(event.includeServer(), new ItemTagsGenerator(output, lookupProvider, blockTagsGenerator, existingFileHelper));
-		generator.addProvider(event.includeServer(), new SlurryTagGenerator(output, lookupProvider, existingFileHelper));
+		generator.addProvider(event.includeServer(), new ChemicalTagGenerator(output, lookupProvider, existingFileHelper));
 		generator.addProvider(event.includeServer(), new RecipesGenerator(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new LanguagesGenerator(output));
 

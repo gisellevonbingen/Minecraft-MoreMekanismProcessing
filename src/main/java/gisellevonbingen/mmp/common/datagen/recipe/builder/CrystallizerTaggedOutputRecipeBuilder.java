@@ -8,16 +8,16 @@ import mekanism.api.recipes.ingredients.ItemStackIngredient;
 
 public class CrystallizerTaggedOutputRecipeBuilder extends MekanismRecipeBuilder<CrystallizerTaggedOutputRecipeBuilder>
 {
-	private final ChemicalStackIngredient<?, ?, ?> input;
+	private final ChemicalStackIngredient input;
 	private final ItemStackIngredient output;
 
-	protected CrystallizerTaggedOutputRecipeBuilder(ChemicalStackIngredient<?, ?, ?> input, ItemStackIngredient output)
+	protected CrystallizerTaggedOutputRecipeBuilder(ChemicalStackIngredient input, ItemStackIngredient output)
 	{
 		this.input = input;
 		this.output = output;
 	}
 
-	public static CrystallizerTaggedOutputRecipeBuilder crystallizing(ChemicalStackIngredient<?, ?, ?> input, ItemStackIngredient output)
+	public static CrystallizerTaggedOutputRecipeBuilder crystallizing(ChemicalStackIngredient input, ItemStackIngredient output)
 	{
 		return new CrystallizerTaggedOutputRecipeBuilder(input, output);
 	}

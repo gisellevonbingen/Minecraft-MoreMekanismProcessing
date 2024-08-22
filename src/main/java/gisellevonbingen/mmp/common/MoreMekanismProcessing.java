@@ -3,13 +3,13 @@ package gisellevonbingen.mmp.common;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import gisellevonbingen.mmp.common.chemical.MMPChemicals;
 import gisellevonbingen.mmp.common.config.MMPConfigs;
 import gisellevonbingen.mmp.common.crafting.MMPRecipeSerializers;
 import gisellevonbingen.mmp.common.crafting.conditions.MMPCraftingConditions;
 import gisellevonbingen.mmp.common.integration.MMPIntagrations;
 import gisellevonbingen.mmp.common.item.MMPCreativeModeTabs;
 import gisellevonbingen.mmp.common.item.MMPItems;
-import gisellevonbingen.mmp.common.slurry.MMPSlurries;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
@@ -34,12 +34,12 @@ public class MoreMekanismProcessing
 		IEventBus modEventBus = modLoadingContext.getActiveContainer().getEventBus();
 
 		MMPItems.ITEMS.register(modEventBus);
-		MMPSlurries.SLURRIES.register(modEventBus);
+		MMPChemicals.CHEMICALS.register(modEventBus);
 		MMPCreativeModeTabs.TABS.register(modEventBus);
 		MMPCraftingConditions.CONDITIONS.register(modEventBus);
 		MMPRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
 		MMPIntagrations.initialize();
-		
+
 		IEventBus gameEventBus = NeoForge.EVENT_BUS;
 		gameEventBus.addListener(this::onTagsUpdated);
 	}
@@ -48,7 +48,7 @@ public class MoreMekanismProcessing
 	{
 		TAGS_UPDATED_REVISION++;
 	}
-	
+
 	public static ResourceLocation rl(String path)
 	{
 		return ResourceLocation.fromNamespaceAndPath(MODID, path);

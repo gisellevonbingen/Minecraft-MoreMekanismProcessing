@@ -6,16 +6,13 @@ import java.util.function.BiFunction;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.RepresentationUtils;
 import mekanism.api.SerializationConstants;
-import mekanism.api.chemical.ChemicalType;
-import mekanism.api.chemical.merged.BoxedChemicalStack;
-import mekanism.api.codec.DependentMapCodec;
+import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.recipes.basic.BasicChemicalCrystallizerRecipe;
 import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
@@ -34,7 +31,7 @@ public class ChemicalCrystallizerTaggedOutputRecipe extends BasicChemicalCrystal
 	private int revision;
 	private ItemStack cachedResult;
 
-	public ChemicalCrystallizerTaggedOutputRecipe(ChemicalStackIngredient<?, ?, ?> input, ItemStackIngredient output)
+	public ChemicalCrystallizerTaggedOutputRecipe(ChemicalStackIngredient input, ItemStackIngredient output)
 	{
 		super(input, MekanismItems.ATOMIC_ALLOY.getItemStack());
 		this.output = output;
@@ -68,7 +65,7 @@ public class ChemicalCrystallizerTaggedOutputRecipe extends BasicChemicalCrystal
 	}
 
 	@Override
-	public ItemStack getOutput(BoxedChemicalStack input)
+	public ItemStack getOutput(ChemicalStack input)
 	{
 		return this.getItemStackResult().copy();
 	}
@@ -93,21 +90,17 @@ public class ChemicalCrystallizerTaggedOutputRecipe extends BasicChemicalCrystal
 
 	public static class Serializer implements RecipeSerializer<ChemicalCrystallizerTaggedOutputRecipe>
 	{
-		private static final MapCodec<ChemicalType> chemicalTypeMapCodec = ChemicalType.CODEC.fieldOf(SerializationConstants.CHEMICAL_TYPE);
-		@SuppressWarnings("unchecked")
-		private static final MapCodec<ChemicalStackIngredient<?, ?, ?>> chemicalStackIngredientMapEncoder = new DependentMapCodec<>(SerializationConstants.INPUT, type -> (Codec<ChemicalStackIngredient<?, ?, ?>>) IngredientCreatorAccess.getCreatorForType(type).codec(), chemicalTypeMapCodec, ChemicalType::getTypeFor);
-
 		private final StreamCodec<RegistryFriendlyByteBuf, ChemicalCrystallizerTaggedOutputRecipe> streamCodec;
 		private final MapCodec<ChemicalCrystallizerTaggedOutputRecipe> codec;
 
-		public Serializer(BiFunction<ChemicalStackIngredient<?, ?, ?>, ItemStackIngredient, ChemicalCrystallizerTaggedOutputRecipe> factory)
+		public Serializer(BiFunction<ChemicalStackIngredient, ItemStackIngredient, ChemicalCrystallizerTaggedOutputRecipe> factory)
 		{
 			this.codec = RecordCodecBuilder.mapCodec(instance -> instance.group(//
-					chemicalStackIngredientMapEncoder.forGetter(ChemicalCrystallizerTaggedOutputRecipe::getInput), //
+					IngredientCreatorAccess.chemicalStack().codec().fieldOf(SerializationConstants.INPUT).forGetter(BasicChemicalCrystallizerRecipe::getInput), //
 					ItemStackIngredient.CODEC.fieldOf(SerializationConstants.OUTPUT).forGetter(ChemicalCrystallizerTaggedOutputRecipe::getTaggedResult)//
 			).apply(instance, factory));
 			this.streamCodec = StreamCodec.composite(//
-					ChemicalType.STREAM_CODEC.<RegistryFriendlyByteBuf> cast().dispatch(ChemicalType::getTypeFor, chemicalType -> IngredientCreatorAccess.getCreatorForType(chemicalType).streamCodec()), ChemicalCrystallizerTaggedOutputRecipe::getInput, //
+					IngredientCreatorAccess.chemicalStack().streamCodec(), BasicChemicalCrystallizerRecipe::getInput, //
 					ItemStackIngredient.STREAM_CODEC, ChemicalCrystallizerTaggedOutputRecipe::getTaggedResult, //
 					factory);
 		}

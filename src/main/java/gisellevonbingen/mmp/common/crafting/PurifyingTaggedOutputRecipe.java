@@ -7,9 +7,9 @@ import org.jetbrains.annotations.NotNull;
 
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.RepresentationUtils;
-import mekanism.api.chemical.gas.GasStack;
+import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.recipes.basic.BasicPurifyingRecipe;
-import mekanism.api.recipes.ingredients.GasStackIngredient;
+import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import mekanism.common.registries.MekanismItems;
 import net.minecraft.core.HolderLookup.Provider;
@@ -23,9 +23,9 @@ public class PurifyingTaggedOutputRecipe extends BasicPurifyingRecipe implements
 	private int revision;
 	private ItemStack cachedResult;
 
-	public PurifyingTaggedOutputRecipe(ItemStackIngredient itemInput, GasStackIngredient gasInput, ItemStackIngredient output)
+	public PurifyingTaggedOutputRecipe(ItemStackIngredient itemInput, ChemicalStackIngredient chemicalInput, ItemStackIngredient output, boolean perTickUsage)
 	{
-		super(itemInput, gasInput, MekanismItems.ATOMIC_ALLOY.getItemStack());
+		super(itemInput, chemicalInput, MekanismItems.ATOMIC_ALLOY.getItemStack(), perTickUsage);
 		this.output = output;
 	}
 
@@ -57,7 +57,7 @@ public class PurifyingTaggedOutputRecipe extends BasicPurifyingRecipe implements
 	}
 
 	@Override
-	public ItemStack getOutput(ItemStack inputItem, GasStack inputChemical)
+	public ItemStack getOutput(ItemStack inputItem, ChemicalStack inputChemical)
 	{
 		return this.getItemStackResult().copy();
 	}

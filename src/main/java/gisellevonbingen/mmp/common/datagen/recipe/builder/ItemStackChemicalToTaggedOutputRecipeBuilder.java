@@ -2,51 +2,48 @@ package gisellevonbingen.mmp.common.datagen.recipe.builder;
 
 import gisellevonbingen.mmp.common.crafting.InjectingTaggedOutputRecipe;
 import gisellevonbingen.mmp.common.crafting.PurifyingTaggedOutputRecipe;
-import mekanism.api.chemical.Chemical;
-import mekanism.api.chemical.ChemicalStack;
-import mekanism.api.chemical.gas.Gas;
-import mekanism.api.chemical.gas.GasStack;
 import mekanism.api.datagen.recipe.MekanismRecipeBuilder;
-import mekanism.api.recipes.chemical.ItemStackChemicalToItemStackRecipe;
+import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
 import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
-import mekanism.api.recipes.ingredients.GasStackIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
 
-public class ItemStackChemicalToTaggedOutputRecipeBuilder<CHEMICAL extends Chemical<CHEMICAL>, STACK extends ChemicalStack<CHEMICAL>, INGREDIENT extends ChemicalStackIngredient<CHEMICAL, STACK, ?>> extends MekanismRecipeBuilder<ItemStackChemicalToTaggedOutputRecipeBuilder<CHEMICAL, STACK, INGREDIENT>>
+public class ItemStackChemicalToTaggedOutputRecipeBuilder extends MekanismRecipeBuilder<ItemStackChemicalToTaggedOutputRecipeBuilder>
 {
-	private final ItemStackChemicalToTaggedOutputRecipeBuilder.Factory<CHEMICAL, STACK, INGREDIENT> factory;
+	private final ItemStackChemicalToTaggedOutputRecipeBuilder.Factory factory;
 	private final ItemStackIngredient itemInput;
-	private final INGREDIENT chemicalInput;
+	private final ChemicalStackIngredient chemicalInput;
 	private final ItemStackIngredient output;
+	private final boolean perTickUsage;
 
-	protected ItemStackChemicalToTaggedOutputRecipeBuilder(ItemStackIngredient itemInput, INGREDIENT chemicalInput, ItemStackIngredient output, ItemStackChemicalToTaggedOutputRecipeBuilder.Factory<CHEMICAL, STACK, INGREDIENT> factory)
+	protected ItemStackChemicalToTaggedOutputRecipeBuilder(ItemStackIngredient itemInput, ChemicalStackIngredient chemicalInput, ItemStackIngredient output, boolean perTickUsage, ItemStackChemicalToTaggedOutputRecipeBuilder.Factory factory)
 	{
 		this.itemInput = itemInput;
 		this.chemicalInput = chemicalInput;
 		this.output = output;
 		this.factory = factory;
+		this.perTickUsage = perTickUsage;
 	}
 
-	public static ItemStackChemicalToTaggedOutputRecipeBuilder<Gas, GasStack, GasStackIngredient> purifying(ItemStackIngredient itemInput, GasStackIngredient gasInput, ItemStackIngredient output)
+	public static ItemStackChemicalToTaggedOutputRecipeBuilder purifying(ItemStackIngredient itemInput, ChemicalStackIngredient chemicalInput, ItemStackIngredient output, boolean perTickUsage)
 	{
-		return new ItemStackChemicalToTaggedOutputRecipeBuilder<>(itemInput, gasInput, output, PurifyingTaggedOutputRecipe::new);
+		return new ItemStackChemicalToTaggedOutputRecipeBuilder(itemInput, chemicalInput, output, perTickUsage, PurifyingTaggedOutputRecipe::new);
 	}
 
-	public static ItemStackChemicalToTaggedOutputRecipeBuilder<Gas, GasStack, GasStackIngredient> injecting(ItemStackIngredient itemInput, GasStackIngredient gasInput, ItemStackIngredient output)
+	public static ItemStackChemicalToTaggedOutputRecipeBuilder injecting(ItemStackIngredient itemInput, ChemicalStackIngredient chemicalInput, ItemStackIngredient output, boolean perTickUsage)
 	{
-		return new ItemStackChemicalToTaggedOutputRecipeBuilder<>(itemInput, gasInput, output, InjectingTaggedOutputRecipe::new);
+		return new ItemStackChemicalToTaggedOutputRecipeBuilder(itemInput, chemicalInput, output, perTickUsage, InjectingTaggedOutputRecipe::new);
 	}
 
 	@Override
-	protected ItemStackChemicalToItemStackRecipe<CHEMICAL, STACK, INGREDIENT> asRecipe()
+	protected ItemStackChemicalToItemStackRecipe asRecipe()
 	{
-		return this.factory.create(this.itemInput, this.chemicalInput, this.output);
+		return this.factory.create(this.itemInput, this.chemicalInput, this.output, this.perTickUsage);
 	}
 
 	@FunctionalInterface
-	public interface Factory<CHEMICAL extends Chemical<CHEMICAL>, STACK extends ChemicalStack<CHEMICAL>, INGREDIENT extends ChemicalStackIngredient<CHEMICAL, STACK, ?>>
+	public interface Factory
 	{
-		ItemStackChemicalToItemStackRecipe<CHEMICAL, STACK, INGREDIENT> create(ItemStackIngredient itemInput, INGREDIENT chemicalInput, ItemStackIngredient output);
+		ItemStackChemicalToItemStackRecipe create(ItemStackIngredient itemInput, ChemicalStackIngredient chemicalInput, ItemStackIngredient output, boolean perTickUsage);
 	}
 
 }

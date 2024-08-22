@@ -51,7 +51,7 @@ public class CommonConfig
 			}
 
 			this.processingLevels.put(materialType, builder.defineInRange("processingLevel", processingLevel, 0, 5));
-			
+
 			if (materialType.getResultShape() == MaterialResultShape.INGOT)
 			{
 				builder.comment("Disable recipe what smelting/blasting dust into ingot.");

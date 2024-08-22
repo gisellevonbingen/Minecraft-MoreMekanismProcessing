@@ -1,4 +1,4 @@
-package gisellevonbingen.mmp.common.slurry;
+package gisellevonbingen.mmp.common.chemical;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,18 +7,18 @@ import java.util.function.UnaryOperator;
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
 import gisellevonbingen.mmp.common.material.MaterialState;
 import gisellevonbingen.mmp.common.material.MaterialType;
-import mekanism.api.chemical.slurry.Slurry;
-import mekanism.api.chemical.slurry.SlurryBuilder;
+import mekanism.api.chemical.Chemical;
+import mekanism.api.chemical.ChemicalBuilder;
 import mekanism.common.registration.impl.SlurryRegistryObject;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
-public class MMPSlurries
+public class MMPChemicals
 {
-	public static final SlurryDeferredRegister2 SLURRIES = new SlurryDeferredRegister2(MoreMekanismProcessing.MODID);
-	public static final Map<MaterialType, SlurryRegistryObject<Slurry, Slurry>> MAP = new HashMap<>();
+	public static final ChemicalDeferredRegister2 CHEMICALS = new ChemicalDeferredRegister2(MoreMekanismProcessing.MODID);
+	public static final Map<MaterialType, SlurryRegistryObject<Chemical, Chemical>> MAP = new HashMap<>();
 
-	public static SlurryRegistryObject<Slurry, Slurry> getSlurryRegistry(MaterialType materialType)
+	public static SlurryRegistryObject<Chemical, Chemical> getSlurryRegistry(MaterialType materialType)
 	{
 		return MAP.get(materialType);
 	}
@@ -31,7 +31,7 @@ public class MMPSlurries
 
 			if (materialType.getResultShape().canProcess(crystal) == true)
 			{
-				SlurryRegistryObject<Slurry, Slurry> registryObject = SLURRIES.register(materialType, new SlurryBuildOperator(materialType));
+				SlurryRegistryObject<Chemical, Chemical> registryObject = CHEMICALS.registerSlurries(materialType, new ChemicalBuildOperator(materialType));
 				MAP.put(materialType, registryObject);
 			}
 
@@ -39,17 +39,17 @@ public class MMPSlurries
 
 	}
 
-	public static final class SlurryBuildOperator implements UnaryOperator<SlurryBuilder>
+	public static final class ChemicalBuildOperator implements UnaryOperator<ChemicalBuilder>
 	{
 		private final MaterialType materialType;
 
-		private SlurryBuildOperator(MaterialType materialType)
+		private ChemicalBuildOperator(MaterialType materialType)
 		{
 			this.materialType = materialType;
 		}
 
 		@Override
-		public SlurryBuilder apply(SlurryBuilder builder)
+		public ChemicalBuilder apply(ChemicalBuilder builder)
 		{
 			TagKey<Item> tag = MaterialState.ORE.getStateTag(this.materialType);
 			return builder.ore(tag);

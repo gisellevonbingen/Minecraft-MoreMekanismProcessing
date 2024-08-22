@@ -1,11 +1,11 @@
 package gisellevonbingen.mmp.common.datagen;
 
 import gisellevonbingen.mmp.common.MoreMekanismProcessing;
+import gisellevonbingen.mmp.common.chemical.MMPChemicals;
+import gisellevonbingen.mmp.common.chemical.MMPSlurry;
+import gisellevonbingen.mmp.common.chemical.MMPSlurryBuilder;
 import gisellevonbingen.mmp.common.material.MaterialState;
 import gisellevonbingen.mmp.common.material.MaterialType;
-import gisellevonbingen.mmp.common.slurry.MMPSlurries;
-import gisellevonbingen.mmp.common.slurry.MMPSlurry;
-import gisellevonbingen.mmp.common.slurry.MMPSlurryBuilder;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -30,7 +30,7 @@ public class LanguagesGenerator extends LanguageProvider
 		this.add(statedCommentPrefix + (statedCommentLine++), "Items can override this rule thought by declare that item's translation");
 		this.add(statedCommentPrefix + (statedCommentLine++), "    e.g.) '" + MaterialState.INGOT.getItem(MaterialType.COBALT).getDescriptionId() + "' : 'Blue Metal'");
 		this.add(statedCommentPrefix + (statedCommentLine++), "So is slurry");
-		this.add(statedCommentPrefix + (statedCommentLine++), "    e.g.) '" + MMPSlurries.getSlurryRegistry(MaterialType.COBALT).getCleanSlurry().getTranslationKey() + "' : 'Clean Blue Metal Slurry'");
+		this.add(statedCommentPrefix + (statedCommentLine++), "    e.g.) '" + MMPChemicals.getSlurryRegistry(MaterialType.COBALT).getCleanSlurry().getTranslationKey() + "' : 'Clean Blue Metal Slurry'");
 
 		this.add(MaterialState.ORE.getStatedDescriptionId(), "%s Ore");
 		this.add(MaterialState.RAW_ITEM.getStatedDescriptionId(), "Raw %s");

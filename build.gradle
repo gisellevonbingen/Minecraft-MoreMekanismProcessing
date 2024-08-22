@@ -67,7 +67,6 @@ dependencies {
 
     // Runtiem Only
     implementation "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
-    runtimeOnly "curse.maven:ato-405593:5466566"
 }
 
 tasks.withType(ProcessResources).configureEach {

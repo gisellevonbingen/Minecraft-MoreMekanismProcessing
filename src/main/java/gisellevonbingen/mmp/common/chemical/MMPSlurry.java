@@ -1,11 +1,11 @@
-package gisellevonbingen.mmp.common.slurry;
+package gisellevonbingen.mmp.common.chemical;
 
 import gisellevonbingen.mmp.common.material.MaterialState;
 import gisellevonbingen.mmp.common.material.MaterialType;
-import mekanism.api.chemical.slurry.Slurry;
+import mekanism.api.chemical.Chemical;
 import net.minecraft.network.chat.Component;
 
-public class MMPSlurry extends Slurry
+public class MMPSlurry extends Chemical
 {
 	public static final String SLURRY = "slurry";
 

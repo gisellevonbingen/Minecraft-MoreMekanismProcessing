@@ -1,13 +1,13 @@
-package gisellevonbingen.mmp.common.slurry;
+package gisellevonbingen.mmp.common.chemical;
 
 import java.util.Objects;
 
 import gisellevonbingen.mmp.common.material.MaterialType;
-import mekanism.api.chemical.slurry.SlurryBuilder;
+import mekanism.api.chemical.ChemicalBuilder;
 import mekanism.common.Mekanism;
 import net.minecraft.resources.ResourceLocation;
 
-public class MMPSlurryBuilder extends SlurryBuilder
+public class MMPSlurryBuilder extends ChemicalBuilder
 {
 	public static final String DIRTY = "dirty";
 	public static final String CLEAN = "clean";
