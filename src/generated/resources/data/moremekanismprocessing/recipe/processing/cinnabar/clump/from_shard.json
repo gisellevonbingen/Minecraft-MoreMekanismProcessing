@@ -9,7 +9,7 @@
   "type": "moremekanismprocessing:tag_purifying",
   "chemical_input": {
     "amount": 1,
-    "gas": "mekanism:oxygen"
+    "chemical": "mekanism:oxygen"
   },
   "item_input": {
     "count": 1,
@@ -18,5 +18,6 @@
   "output": {
     "count": 1,
     "tag": "c:clumps/cinnabar"
-  }
+  },
+  "per_tick_usage": true
 }

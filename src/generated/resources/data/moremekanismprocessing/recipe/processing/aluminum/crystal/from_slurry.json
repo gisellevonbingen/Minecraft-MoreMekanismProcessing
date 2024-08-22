@@ -7,10 +7,9 @@
     }
   ],
   "type": "moremekanismprocessing:tag_crystallizing",
-  "chemical_type": "slurry",
   "input": {
     "amount": 200,
-    "slurry": "moremekanismprocessing:clean_aluminum"
+    "chemical": "moremekanismprocessing:clean_aluminum"
   },
   "output": {
     "count": 1,

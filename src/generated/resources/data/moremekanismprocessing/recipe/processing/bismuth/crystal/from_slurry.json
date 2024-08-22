@@ -7,10 +7,9 @@
     }
   ],
   "type": "moremekanismprocessing:tag_crystallizing",
-  "chemical_type": "slurry",
   "input": {
     "amount": 200,
-    "slurry": "moremekanismprocessing:clean_bismuth"
+    "chemical": "moremekanismprocessing:clean_bismuth"
   },
   "output": {
     "count": 1,

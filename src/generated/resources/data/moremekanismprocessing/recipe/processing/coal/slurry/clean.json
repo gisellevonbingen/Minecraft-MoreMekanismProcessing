@@ -7,6 +7,10 @@
     }
   ],
   "type": "mekanism:washing",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "moremekanismprocessing:dirty_coal"
+  },
   "fluid_input": {
     "amount": 5,
     "fluid": "minecraft:water"
@@ -14,9 +18,5 @@
   "output": {
     "amount": 1,
     "id": "moremekanismprocessing:clean_coal"
-  },
-  "slurry_input": {
-    "amount": 1,
-    "slurry": "moremekanismprocessing:dirty_coal"
   }
 }

@@ -16,7 +16,7 @@
   "type": "moremekanismprocessing:tag_injecting",
   "chemical_input": {
     "amount": 2,
-    "gas": "mekanism:hydrogen_chloride"
+    "chemical": "mekanism:hydrogen_chloride"
   },
   "item_input": {
     "count": 1,
@@ -25,5 +25,6 @@
   "output": {
     "count": 24,
     "tag": "c:shards/desh"
-  }
+  },
+  "per_tick_usage": true
 }

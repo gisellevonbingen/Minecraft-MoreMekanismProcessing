@@ -46,7 +46,7 @@
   "statedMaterial.moremekanismprocessing._comment6": "Items can override this rule thought by declare that item's translation",
   "statedMaterial.moremekanismprocessing._comment7": "    e.g.) 'item.moremekanismprocessing.cobalt_ingot' : 'Blue Metal'",
   "statedMaterial.moremekanismprocessing._comment8": "So is slurry",
-  "statedMaterial.moremekanismprocessing._comment9": "    e.g.) 'slurry.moremekanismprocessing.clean_cobalt' : 'Clean Blue Metal Slurry'",
+  "statedMaterial.moremekanismprocessing._comment9": "    e.g.) 'chemical.moremekanismprocessing.clean_cobalt' : 'Clean Blue Metal Slurry'",
   "statedMaterial.moremekanismprocessing.clean_slurry": "Clean %s Slurry",
   "statedMaterial.moremekanismprocessing.clump": "%s Clump",
   "statedMaterial.moremekanismprocessing.crystal": "%s Crystal",

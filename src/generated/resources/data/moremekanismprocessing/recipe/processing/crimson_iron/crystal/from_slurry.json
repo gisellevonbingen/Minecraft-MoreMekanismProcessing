@@ -7,10 +7,9 @@
     }
   ],
   "type": "moremekanismprocessing:tag_crystallizing",
-  "chemical_type": "slurry",
   "input": {
     "amount": 200,
-    "slurry": "moremekanismprocessing:clean_crimson_iron"
+    "chemical": "moremekanismprocessing:clean_crimson_iron"
   },
   "output": {
     "count": 1,

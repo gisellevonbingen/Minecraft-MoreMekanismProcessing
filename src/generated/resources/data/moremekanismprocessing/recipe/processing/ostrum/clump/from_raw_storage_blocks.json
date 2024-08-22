@@ -16,7 +16,7 @@
   "type": "moremekanismprocessing:tag_purifying",
   "chemical_input": {
     "amount": 2,
-    "gas": "mekanism:oxygen"
+    "chemical": "mekanism:oxygen"
   },
   "item_input": {
     "count": 1,
@@ -25,5 +25,6 @@
   "output": {
     "count": 18,
     "tag": "c:clumps/ostrum"
-  }
+  },
+  "per_tick_usage": true
 }

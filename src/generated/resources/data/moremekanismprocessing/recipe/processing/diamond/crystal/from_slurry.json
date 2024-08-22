@@ -7,10 +7,9 @@
     }
   ],
   "type": "moremekanismprocessing:tag_crystallizing",
-  "chemical_type": "slurry",
   "input": {
     "amount": 200,
-    "slurry": "moremekanismprocessing:clean_diamond"
+    "chemical": "moremekanismprocessing:clean_diamond"
   },
   "output": {
     "count": 1,

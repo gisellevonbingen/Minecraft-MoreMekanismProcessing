@@ -16,7 +16,7 @@
   "type": "moremekanismprocessing:tag_injecting",
   "chemical_input": {
     "amount": 1,
-    "gas": "mekanism:hydrogen_chloride"
+    "chemical": "mekanism:hydrogen_chloride"
   },
   "item_input": {
     "count": 1,
@@ -25,5 +25,6 @@
   "output": {
     "count": 4,
     "tag": "c:shards/quartz"
-  }
+  },
+  "per_tick_usage": true
 }

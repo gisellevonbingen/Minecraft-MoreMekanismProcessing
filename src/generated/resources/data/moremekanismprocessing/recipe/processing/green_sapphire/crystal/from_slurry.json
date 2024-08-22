@@ -7,10 +7,9 @@
     }
   ],
   "type": "moremekanismprocessing:tag_crystallizing",
-  "chemical_type": "slurry",
   "input": {
     "amount": 200,
-    "slurry": "moremekanismprocessing:clean_green_sapphire"
+    "chemical": "moremekanismprocessing:clean_green_sapphire"
   },
   "output": {
     "count": 1,
